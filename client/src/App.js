@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import parser from "html-react-parser";
 
 class App extends Component {
   constructor() {
@@ -49,7 +48,7 @@ class App extends Component {
           <button type="submit" onClick={this.handleSubmit}>
             Send
           </button>
-          <h2>{parser(this.state.message)}</h2>
+          <h2 dangerouslySetInnerHTML={{ __html: this.state.message }} />
         </form>
       </div>
     );
